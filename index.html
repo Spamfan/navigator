@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waypoint v0.0.1</title>
+  <title>Waypoint v0.0.2</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -131,11 +131,15 @@
     }
 
     .search-row {
+      display: flex;
+      gap: 10px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .search-input {
-      width: 100%;
+      flex: 1;
+      min-width: 200px;
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       color: var(--text-bright);
@@ -145,8 +149,19 @@
       outline: none;
     }
 
-    .search-input:focus {
+    .search-input:focus, .sort-select:focus {
       border-color: var(--accent-blue);
+    }
+
+    .sort-select {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-bright);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
     }
 
     .repo-grid {
@@ -319,6 +334,94 @@
       border-color: var(--danger);
       margin-bottom: 20px;
     }
+
+    .warning-banner {
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      background-color: rgba(210, 153, 34, 0.12);
+      border: 1px solid #d29922;
+      color: #e3b341;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+
+    .btn-green {
+      background-color: #238636;
+      border-color: #2ea043;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background-color: #2ea043;
+    }
+
+    .btn-primary-goto {
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+
+    .tool-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .tool-btn:hover {
+      background-color: var(--btn-gray-hover);
+      color: var(--text-bright);
+    }
+
+    .tool-btn.star-active {
+      color: #e3b341;
+      border-color: #e3b341;
+    }
+
+    .file-path {
+      word-break: break-all;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .file-path:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    .hidden-banner {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hidden-banner button {
+      background: none;
+      border: none;
+      color: var(--accent-blue);
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .hidden-banner button:hover {
+      color: #58a6ff;
+    }
   </style>
 </head>
 <body>
@@ -328,7 +431,7 @@
     <div class="header-top">
       <div class="title-group">
         <h1>Waypoint</h1>
-        <span class="version-tag">v0.0.1</span>
+        <span class="version-tag">v0.0.2</span>
       </div>
 
       <form class="user-form" id="user-form" onsubmit="handleUserSubmit(event)">
@@ -349,14 +452,22 @@
   </header>
 
   <div id="error-box" class="error-banner" style="display: none;"></div>
+  <div id="warning-box" class="warning-banner" style="display: none;"></div>
 
   <div class="search-row">
     <input type="text" id="filter-input" class="search-input" placeholder="Filter repositories..." oninput="handleFilter(this.value)">
+    <select id="sort-select" class="sort-select" onchange="handleSortChange(this.value)">
+      <option value="action">Latest repo action</option>
+      <option value="visited">Recently visited</option>
+      <option value="alpha">Name (A–Z)</option>
+    </select>
   </div>
 
   <div id="repo-list" class="repo-grid">
     <div class="empty-state">Loading repositories...</div>
   </div>
+
+  <div id="hidden-bar" class="hidden-banner" style="display: none;"></div>
 </div>
 
 <script>
@@ -364,6 +475,7 @@
   let currentUser = DEFAULT_USER;
   let reposData = [];
   let lastSyncTimestamp = 0;
+  let currentFilter = '';
   let relativeTimeTimer = null;
 
   function formatRelativeTime(ts) {
@@ -383,8 +495,125 @@
     document.getElementById('last-sync-text').innerText = formatRelativeTime(lastSyncTimestamp);
   }
 
+  function saveQuota(remaining, limit, resetEpoch) {
+    const payload = { remaining, limit, reset: resetEpoch };
+    localStorage.setItem('wp_quota', JSON.stringify(payload));
+    updateQuotaUI(remaining, limit);
+  }
+
+  function updateQuotaUI(remaining, limit) {
+    if (remaining !== null && limit !== null) {
+      document.getElementById('quota-display').innerText = `Quota: ${remaining}/${limit}`;
+    }
+  }
+
+  function loadCachedQuota() {
+    const raw = localStorage.getItem('wp_quota');
+    if (!raw) return;
+    try {
+      const q = JSON.parse(raw);
+      if (q && q.remaining !== undefined && q.limit !== undefined) {
+        updateQuotaUI(q.remaining, q.limit);
+      }
+    } catch (e) {}
+  }
+
   function getStorageKey(user) {
     return `wp_data_${user.toLowerCase()}`;
+  }
+
+  function getPrefs() {
+    const key = `wp_prefs_${currentUser.toLowerCase()}`;
+    const raw = localStorage.getItem(key);
+    if (!raw) return { favorites: [], hidden: [], sort: 'action' };
+    try {
+      const parsed = JSON.parse(raw);
+      return {
+        favorites: Array.isArray(parsed.favorites) ? parsed.favorites : [],
+        hidden: Array.isArray(parsed.hidden) ? parsed.hidden : [],
+        sort: parsed.sort || 'action'
+      };
+    } catch (e) {
+      return { favorites: [], hidden: [], sort: 'action' };
+    }
+  }
+
+  function savePrefs(prefs) {
+    localStorage.setItem(`wp_prefs_${currentUser.toLowerCase()}`, JSON.stringify(prefs));
+  }
+
+  function toggleFavorite(repoName) {
+    const prefs = getPrefs();
+    const idx = prefs.favorites.indexOf(repoName);
+    if (idx > -1) {
+      prefs.favorites.splice(idx, 1);
+    } else {
+      prefs.favorites.push(repoName);
+    }
+    savePrefs(prefs);
+    renderRepos();
+  }
+
+  function toggleHide(repoName) {
+    const prefs = getPrefs();
+    const idx = prefs.hidden.indexOf(repoName);
+    if (idx > -1) {
+      prefs.hidden.splice(idx, 1);
+    } else {
+      prefs.hidden.push(repoName);
+    }
+    savePrefs(prefs);
+    renderRepos();
+  }
+
+  function unhideAll() {
+    const prefs = getPrefs();
+    prefs.hidden = [];
+    savePrefs(prefs);
+    renderRepos();
+  }
+
+  function recordVisit(repoName) {
+    const key = `wp_visits_${currentUser.toLowerCase()}`;
+    let visits = {};
+    try {
+      visits = JSON.parse(localStorage.getItem(key) || '{}');
+    } catch (e) {}
+    visits[repoName] = Date.now();
+    localStorage.setItem(key, JSON.stringify(visits));
+  }
+
+  function getVisits() {
+    const key = `wp_visits_${currentUser.toLowerCase()}`;
+    try {
+      return JSON.parse(localStorage.getItem(key) || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function handleSortChange(sortVal) {
+    const prefs = getPrefs();
+    prefs.sort = sortVal;
+    savePrefs(prefs);
+    renderRepos();
+  }
+
+  function checkStaleSnapshot(syncedAt) {
+    const warnBox = document.getElementById('warning-box');
+    if (!warnBox) return;
+    if (!syncedAt) {
+      warnBox.style.display = 'none';
+      return;
+    }
+    const STALE_THRESHOLD = 18 * 60 * 60 * 1000;
+    const isStale = (Date.now() - syncedAt) > STALE_THRESHOLD;
+    if (isStale) {
+      warnBox.innerText = 'Workflow warning: Snapshot data is over 18 hours stale. The GitHub Actions crawler may have failed or paused.';
+      warnBox.style.display = 'block';
+    } else {
+      warnBox.style.display = 'none';
+    }
   }
 
   async function loadInitialData() {
@@ -399,6 +628,7 @@
         const parsed = JSON.parse(cachedStr);
         reposData = parsed.repos || [];
         lastSyncTimestamp = parsed.synced_at || 0;
+        checkStaleSnapshot(lastSyncTimestamp);
         updateStatusUI();
         renderRepos();
         return;
@@ -414,6 +644,7 @@
           const fileData = await res.json();
           reposData = fileData.repos || [];
           lastSyncTimestamp = fileData.synced_at || Date.now();
+          checkStaleSnapshot(lastSyncTimestamp);
           saveToCache();
           updateStatusUI();
           renderRepos();
@@ -439,7 +670,9 @@
   async function syncNow() {
     const syncBtn = document.getElementById('check-again-btn');
     const errorBox = document.getElementById('error-box');
+    const warnBox = document.getElementById('warning-box');
     errorBox.style.display = 'none';
+    if (warnBox) warnBox.style.display = 'none';
     syncBtn.innerText = '[Checking...]';
     syncBtn.disabled = true;
 
@@ -448,8 +681,9 @@
       
       const quotaRemaining = res.headers.get('x-ratelimit-remaining');
       const quotaLimit = res.headers.get('x-ratelimit-limit');
+      const quotaReset = res.headers.get('x-ratelimit-reset');
       if (quotaRemaining !== null && quotaLimit !== null) {
-        document.getElementById('quota-display').innerText = `Quota: ${quotaRemaining}/${quotaLimit}`;
+        saveQuota(quotaRemaining, quotaLimit, quotaReset);
       }
 
       if (!res.ok) {
@@ -495,7 +729,7 @@
 
     if (drawer.classList.contains('open')) {
       drawer.classList.remove('open');
-      toggleBtn.innerText = 'Explore files ▼';
+      toggleBtn.innerText = 'Download a file ▼';
       return;
     }
 
@@ -504,7 +738,7 @@
 
     const repoObj = reposData.find(r => r.name === repoName);
     if (repoObj && repoObj.files && repoObj.files.length > 0) {
-      renderFilesDrawer(repoName, repoObj.files);
+      renderFilesDrawer(repoName, branch, repoObj.files);
       return;
     }
 
@@ -515,8 +749,9 @@
       
       const quotaRemaining = res.headers.get('x-ratelimit-remaining');
       const quotaLimit = res.headers.get('x-ratelimit-limit');
+      const quotaReset = res.headers.get('x-ratelimit-reset');
       if (quotaRemaining !== null && quotaLimit !== null) {
-        document.getElementById('quota-display').innerText = `Quota: ${quotaRemaining}/${quotaLimit}`;
+        saveQuota(quotaRemaining, quotaLimit, quotaReset);
       }
 
       if (!res.ok) throw new Error(`Could not fetch files (${res.status})`);
@@ -533,13 +768,13 @@
         repoObj.files = files;
         saveToCache();
       }
-      renderFilesDrawer(repoName, files);
+      renderFilesDrawer(repoName, branch, files);
     } catch (err) {
       drawer.innerHTML = `<div style="color: var(--danger); font-size: 0.8rem; padding: 6px;">Error: ${err.message}</div>`;
     }
   }
 
-  function renderFilesDrawer(repoName, files) {
+  function renderFilesDrawer(repoName, branch, files) {
     const drawer = document.getElementById(`drawer-${repoName}`);
     if (!files || files.length === 0) {
       drawer.innerHTML = '<div style="color: var(--text-muted); font-size: 0.8rem; padding: 6px;">No files found in branch.</div>';
@@ -548,9 +783,10 @@
 
     let html = '';
     files.forEach(f => {
+      const blobUrl = `https://github.com/${currentUser}/${repoName}/blob/${branch}/${f.path}`;
       html += `
         <div class="file-item">
-          <span class="file-path">${f.path}</span>
+          <a href="${blobUrl}" target="_blank" class="file-path">${f.path}</a>
           <a href="${f.raw_url}" target="_blank" download class="file-download-link">Download</a>
         </div>
       `;
@@ -559,7 +795,8 @@
   }
 
   function handleFilter(term) {
-    renderRepos(term.toLowerCase().trim());
+    currentFilter = term.toLowerCase().trim();
+    renderRepos();
   }
 
   function handleUserSubmit(e) {
@@ -574,36 +811,78 @@
     }
   }
 
-  function renderRepos(filterTerm = '') {
-    const container = document.getElementById('repo-list');
-    const filtered = reposData.filter(r => r.name.toLowerCase().includes(filterTerm));
+  function getSortedRepos(repos, sortMode, prefs, visits) {
+    const sorted = [...repos];
+    sorted.sort((a, b) => {
+      const aFav = prefs.favorites.includes(a.name);
+      const bFav = prefs.favorites.includes(b.name);
+      if (aFav && !bFav) return -1;
+      if (!aFav && bFav) return 1;
 
-    if (filtered.length === 0) {
+      if (sortMode === 'visited') {
+        const aVisit = visits[a.name] || 0;
+        const bVisit = visits[b.name] || 0;
+        return bVisit - aVisit;
+      } else if (sortMode === 'alpha') {
+        return a.name.localeCompare(b.name);
+      } else {
+        return 0;
+      }
+    });
+    return sorted;
+  }
+
+  function renderRepos() {
+    const container = document.getElementById('repo-list');
+    const prefs = getPrefs();
+    const visits = getVisits();
+
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect && sortSelect.value !== prefs.sort) {
+      sortSelect.value = prefs.sort;
+    }
+
+    const term = currentFilter;
+    const searchFiltered = reposData.filter(r => r.name.toLowerCase().includes(term));
+    const hiddenCount = searchFiltered.filter(r => prefs.hidden.includes(r.name)).length;
+    const visibleRepos = searchFiltered.filter(r => !prefs.hidden.includes(r.name));
+
+    const sorted = getSortedRepos(visibleRepos, prefs.sort, prefs, visits);
+
+    if (sorted.length === 0 && hiddenCount === 0) {
       container.innerHTML = '<div class="empty-state">No repositories match your criteria.</div>';
+      renderHiddenBar(0);
+      return;
+    }
+
+    if (sorted.length === 0 && hiddenCount > 0) {
+      container.innerHTML = '<div class="empty-state">All matching repositories are hidden.</div>';
+      renderHiddenBar(hiddenCount);
       return;
     }
 
     let html = '';
-    filtered.forEach(repo => {
-      const hasIndexHtml = repo.files && repo.files.some(f => f.path.toLowerCase() === 'index.html');
-      const directIndexUrl = `https://raw.githubusercontent.com/${currentUser}/${repo.name}/${repo.branch}/index.html`;
+    sorted.forEach(repo => {
+      const isFav = prefs.favorites.includes(repo.name);
+      const isUserPage = repo.name.toLowerCase() === `${currentUser.toLowerCase()}.github.io`;
+      const pagesUrl = isUserPage ? `https://${currentUser}.github.io/` : `https://${currentUser}.github.io/${repo.name}/`;
 
       html += `
         <div class="repo-card">
           <div class="repo-header">
             <div class="repo-name-box">
-              <a href="${repo.repo_url}" target="_blank" class="repo-link">${repo.name}</a>
+              <button class="tool-btn ${isFav ? 'star-active' : ''}" onclick="toggleFavorite('${repo.name}')" title="Favorite repository">${isFav ? '★' : '☆'}</button>
+              <a href="${pagesUrl}" target="_blank" class="btn btn-blue btn-primary-goto" onclick="recordVisit('${repo.name}')">Go to ${repo.name}</a>
               <span class="branch-badge">${repo.branch}</span>
             </div>
             <div class="action-group">
-              <a href="${repo.repo_url}" target="_blank" class="btn">Repo</a>
-              <a href="${repo.upload_url}" target="_blank" class="btn btn-purple">Upload</a>
-              <a href="${directIndexUrl}" target="_blank" download class="btn btn-blue">Download index.html</a>
-              <a href="${repo.zip_url}" target="_blank" class="btn">ZIP</a>
+              <a href="${repo.repo_url}" target="_blank" class="btn">${repo.name} repo</a>
+              <a href="${repo.upload_url}" target="_blank" class="btn btn-green">Upload</a>
+              <button class="tool-btn" onclick="toggleHide('${repo.name}')" title="Hide repository">✕</button>
             </div>
           </div>
           <button id="toggle-btn-${repo.name}" class="files-toggle-btn" onclick="loadRepoFiles('${repo.name}', '${repo.branch}')">
-            Explore files ▼
+            Download a file ▼
           </button>
           <div id="drawer-${repo.name}" class="files-drawer"></div>
         </div>
@@ -611,7 +890,22 @@
     });
 
     container.innerHTML = html;
+    renderHiddenBar(hiddenCount);
   }
+
+  function renderHiddenBar(count) {
+    const bar = document.getElementById('hidden-bar');
+    if (!bar) return;
+    if (count > 0) {
+      bar.innerHTML = `<span>${count} ${count === 1 ? 'repository' : 'repositories'} hidden</span><button onclick="unhideAll()">Unhide all</button>`;
+      bar.style.display = 'flex';
+    } else {
+      bar.style.display = 'none';
+    }
+  }
+
+  // Restore cached quota on boot
+  loadCachedQuota();
 
   // Periodic relative time ticker
   relativeTimeTimer = setInterval(updateStatusUI, 30000);
