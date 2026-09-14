@@ -29,7 +29,7 @@ jobs:
 
           const USERNAME = 'spamfan';
           const headers = {
-            'User-Agent': 'Waypoint-Crawler',
+            'User-Agent': 'Navigator-Crawler',
             'Accept': 'application/vnd.github.v3+json'
           };
           if (process.env.GITHUB_TOKEN) {
@@ -101,8 +101,8 @@ jobs:
 
       - name: Commit and Push Snapshot
         run: |
-          git config --global user.name "waypoint-bot"
-          git config --global user.email "waypoint-bot@users.noreply.github.com"
+          git config --global user.name "navigator-bot"
+          git config --global user.email "navigator-bot@users.noreply.github.com"
           git add repos.json
           if git diff --staged --quiet; then
             echo "No changes detected in repos.json. Skipping commit."
