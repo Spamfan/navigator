@@ -1,0 +1,112 @@
+name: Update Repositories Snapshot
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch Repositories and File Trees
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node - << 'EOF'
+          const fs = require('fs');
+
+          const USERNAME = 'spamfan';
+          const headers = {
+            'User-Agent': 'Waypoint-Crawler',
+            'Accept': 'application/vnd.github.v3+json'
+          };
+          if (process.env.GITHUB_TOKEN) {
+            headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+          }
+
+          async function fetchJSON(url) {
+            const res = await fetch(url, { headers });
+            if (!res.ok) {
+              throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`);
+            }
+            return await res.json();
+          }
+
+          async function run() {
+            try {
+              console.log(`Fetching repositories for ${USERNAME}...`);
+              const reposUrl = `https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
+              const reposData = await fetchJSON(reposUrl);
+
+              const processedRepos = [];
+
+              for (const r of reposData) {
+                if (r.fork) continue;
+                const branch = r.default_branch || 'main';
+                let files = [];
+
+                try {
+                  const treeUrl = `https://api.github.com/repos/${USERNAME}/${r.name}/git/trees/${branch}?recursive=1`;
+                  const treeData = await fetchJSON(treeUrl);
+                  if (treeData.tree && Array.isArray(treeData.tree)) {
+                    files = treeData.tree
+                      .filter(item => item.type === 'blob')
+                      .map(item => ({
+                        path: item.path,
+                        raw_url: `https://raw.githubusercontent.com/${USERNAME}/${r.name}/${branch}/${item.path}`
+                      }));
+                  }
+                } catch (treeErr) {
+                  console.warn(`Could not load tree for ${r.name}: ${treeErr.message}`);
+                }
+
+                processedRepos.push({
+                  name: r.name,
+                  branch: branch,
+                  repo_url: r.html_url,
+                  upload_url: `https://github.com/${USERNAME}/${r.name}/upload/${branch}`,
+                  zip_url: `https://github.com/${USERNAME}/${r.name}/archive/refs/heads/${branch}.zip`,
+                  files: files
+                });
+              }
+
+              const output = {
+                user: USERNAME,
+                synced_at: Date.now(),
+                repos: processedRepos
+              };
+
+              fs.writeFileSync('repos.json', JSON.stringify(output, null, 2), 'utf8');
+              console.log(`Successfully updated repos.json with ${processedRepos.length} repositories.`);
+            } catch (err) {
+              console.error(err);
+              process.exit(1);
+            }
+          }
+
+          run();
+          EOF
+
+      - name: Commit and Push Snapshot
+        run: |
+          git config --global user.name "waypoint-bot"
+          git config --global user.email "waypoint-bot@users.noreply.github.com"
+          git add repos.json
+          if git diff --staged --quiet; then
+            echo "No changes detected in repos.json. Skipping commit."
+          else
+            git commit -m "Auto-update repos.json snapshot [skip ci]"
+            git push
+          fi
