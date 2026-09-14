@@ -1,89 +1,464 @@
 {
   "user": "spamfan",
-  "synced_at": 1773465600000,
+  "synced_at": 1789404865810,
   "repos": [
+    {
+      "name": "navigator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/navigator",
+      "upload_url": "https://github.com/spamfan/navigator/upload/main",
+      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/update.yaml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+        },
+        {
+          "path": "Navigator LDD2.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+        },
+        {
+          "path": "repos.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "workflowoptimizer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/workflowoptimizer",
+      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
+      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
+        },
+        {
+          "path": "js/app.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
+        },
+        {
+          "path": "js/auth.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
+        },
+        {
+          "path": "js/ocr.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/ocr.js"
+        },
+        {
+          "path": "js/scanner.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/scanner.js"
+        },
+        {
+          "path": "js/staging.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/staging.js"
+        },
+        {
+          "path": "stats.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
+        },
+        {
+          "path": "wfo-ldd-v8.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v8.md"
+        }
+      ]
+    },
+    {
+      "name": "patcher",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/patcher",
+      "upload_url": "https://github.com/spamfan/patcher/upload/main",
+      "zip_url": "https://github.com/spamfan/patcher/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "LDD7.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/patcher/main/LDD7.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/patcher/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "A-test",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/A-test",
+      "upload_url": "https://github.com/spamfan/A-test/upload/main",
+      "zip_url": "https://github.com/spamfan/A-test/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "helper.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/A-test/main/helper.js"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/A-test/main/index.html"
+        },
+        {
+          "path": "probe.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/A-test/main/probe.css"
+        },
+        {
+          "path": "probe.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/A-test/main/probe.js"
+        }
+      ]
+    },
     {
       "name": "spamfan.github.io",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/spamfan.github.io",
+      "repo_url": "https://github.com/Spamfan/spamfan.github.io",
       "upload_url": "https://github.com/spamfan/spamfan.github.io/upload/main",
       "zip_url": "https://github.com/spamfan/spamfan.github.io/archive/refs/heads/main.zip",
       "files": [
         {
+          "path": "404.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/404.html"
+        },
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon.ico"
+        },
+        {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/index.html"
+        },
+        {
+          "path": "site.webmanifest",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/site.webmanifest"
         }
       ]
     },
     {
       "name": "optimizer",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/optimizer",
+      "repo_url": "https://github.com/Spamfan/optimizer",
       "upload_url": "https://github.com/spamfan/optimizer/upload/main",
       "zip_url": "https://github.com/spamfan/optimizer/archive/refs/heads/main.zip",
       "files": [
         {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/index.html"
-        }
-      ]
-    },
-    {
-      "name": "optimizerunstable",
-      "branch": "main",
-      "repo_url": "https://github.com/spamfan/optimizerunstable",
-      "upload_url": "https://github.com/spamfan/optimizerunstable/upload/main",
-      "zip_url": "https://github.com/spamfan/optimizerunstable/archive/refs/heads/main.zip",
-      "files": [
+          "path": ".github/workflows/purge_cdn.yml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/.github/workflows/purge_cdn.yml"
+        },
+        {
+          "path": "404.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/404.html"
+        },
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/apple-touch-icon.png"
+        },
+        {
+          "path": "edlp_data.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/edlp_data.json"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon.ico"
+        },
         {
           "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/index.html"
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/index.html"
+        },
+        {
+          "path": "inventory_data.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/inventory_data.json"
+        },
+        {
+          "path": "script.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/script.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/styles.css"
         }
       ]
     },
     {
       "name": "prints",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/prints",
+      "repo_url": "https://github.com/Spamfan/prints",
       "upload_url": "https://github.com/spamfan/prints/upload/main",
       "zip_url": "https://github.com/spamfan/prints/archive/refs/heads/main.zip",
       "files": [
         {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/favicon.ico"
+        },
+        {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/index.html"
+        },
+        {
+          "path": "postpaid-IS.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/postpaid-IS.png"
+        },
+        {
+          "path": "prepaid-IS.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/prepaid-IS.png"
+        },
+        {
+          "path": "scrap-paper.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/scrap-paper.png"
+        },
+        {
+          "path": "site.webmanifest",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/site.webmanifest"
+        },
+        {
+          "path": "ths3-1.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/prints/main/ths3-1.png"
         }
       ]
     },
     {
       "name": "printsunstable",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/printsunstable",
+      "repo_url": "https://github.com/Spamfan/printsunstable",
       "upload_url": "https://github.com/spamfan/printsunstable/upload/main",
       "zip_url": "https://github.com/spamfan/printsunstable/archive/refs/heads/main.zip",
       "files": [
         {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/favicon.ico"
+        },
+        {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/index.html"
+        },
+        {
+          "path": "prepaid-IS.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/prepaid-IS.png"
+        },
+        {
+          "path": "scrap-paper.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/scrap-paper.png"
+        },
+        {
+          "path": "ths3-1.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/printsunstable/main/ths3-1.png"
         }
       ]
     },
     {
-      "name": "iris",
+      "name": "optimizerunstable",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/iris",
-      "upload_url": "https://github.com/spamfan/iris/upload/main",
-      "zip_url": "https://github.com/spamfan/iris/archive/refs/heads/main.zip",
+      "repo_url": "https://github.com/Spamfan/optimizerunstable",
+      "upload_url": "https://github.com/spamfan/optimizerunstable/upload/main",
+      "zip_url": "https://github.com/spamfan/optimizerunstable/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/apple-touch-icon.png"
+        },
+        {
+          "path": "edlp_data.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/edlp_data.json"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/favicon.ico"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/index.html"
+        },
+        {
+          "path": "script.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/script.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizerunstable/main/styles.css"
+        }
+      ]
+    },
+    {
+      "name": "games",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/games",
+      "upload_url": "https://github.com/spamfan/games/upload/main",
+      "zip_url": "https://github.com/spamfan/games/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "fps/index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/games/main/fps/index.html"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/games/main/index.html"
+        },
+        {
+          "path": "rooke/index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/games/main/rooke/index.html"
+        },
+        {
+          "path": "rooke/logo.jpg",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/games/main/rooke/logo.jpg"
+        },
+        {
+          "path": "ttt3/index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/games/main/ttt3/index.html"
+        }
+      ]
+    },
+    {
+      "name": "isolater",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/isolater",
+      "upload_url": "https://github.com/spamfan/isolater/upload/main",
+      "zip_url": "https://github.com/spamfan/isolater/archive/refs/heads/main.zip",
       "files": [
         {
           "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/index.html"
+          "raw_url": "https://raw.githubusercontent.com/spamfan/isolater/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "probe2",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/probe2",
+      "upload_url": "https://github.com/spamfan/probe2/upload/main",
+      "zip_url": "https://github.com/spamfan/probe2/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/probe2/main/index.html"
+        },
+        {
+          "path": "script.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/probe2/main/script.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/probe2/main/styles.css"
+        },
+        {
+          "path": "test-image.jpg",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/probe2/main/test-image.jpg"
+        }
+      ]
+    },
+    {
+      "name": "edlpbackups",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/edlpbackups",
+      "upload_url": "https://github.com/spamfan/edlpbackups/upload/main",
+      "zip_url": "https://github.com/spamfan/edlpbackups/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/edlpbackups/main/index.html"
         }
       ]
     },
     {
       "name": "installmentmanager",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/installmentmanager",
+      "repo_url": "https://github.com/Spamfan/installmentmanager",
       "upload_url": "https://github.com/spamfan/installmentmanager/upload/main",
       "zip_url": "https://github.com/spamfan/installmentmanager/archive/refs/heads/main.zip",
       "files": [
@@ -94,15 +469,470 @@
       ]
     },
     {
-      "name": "workflowoptimizer",
+      "name": "mdviewer",
       "branch": "main",
-      "repo_url": "https://github.com/spamfan/workflowoptimizer",
-      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
-      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
+      "repo_url": "https://github.com/Spamfan/mdviewer",
+      "upload_url": "https://github.com/spamfan/mdviewer/upload/main",
+      "zip_url": "https://github.com/spamfan/mdviewer/archive/refs/heads/main.zip",
       "files": [
         {
           "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
+          "raw_url": "https://raw.githubusercontent.com/spamfan/mdviewer/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "iris",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/iris",
+      "upload_url": "https://github.com/spamfan/iris/upload/main",
+      "zip_url": "https://github.com/spamfan/iris/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "Polish_20260513_160717081.jpg",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/Polish_20260513_160717081.jpg"
+        },
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/favicon.ico"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/iris/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "converter",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/converter",
+      "upload_url": "https://github.com/spamfan/converter/upload/main",
+      "zip_url": "https://github.com/spamfan/converter/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/converter/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "scanner",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/scanner",
+      "upload_url": "https://github.com/spamfan/scanner/upload/main",
+      "zip_url": "https://github.com/spamfan/scanner/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/scanner/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "roadblock",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/roadblock",
+      "upload_url": "https://github.com/spamfan/roadblock/upload/main",
+      "zip_url": "https://github.com/spamfan/roadblock/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/roadblock/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "roguelike",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/roguelike",
+      "upload_url": "https://github.com/spamfan/roguelike/upload/main",
+      "zip_url": "https://github.com/spamfan/roguelike/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/roguelike/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "ttr",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/ttr",
+      "upload_url": "https://github.com/spamfan/ttr/upload/main",
+      "zip_url": "https://github.com/spamfan/ttr/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "tanktycoon",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/tanktycoon",
+      "upload_url": "https://github.com/spamfan/tanktycoon/upload/main",
+      "zip_url": "https://github.com/spamfan/tanktycoon/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktycoon/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "g",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/g",
+      "upload_url": "https://github.com/spamfan/g/upload/main",
+      "zip_url": "https://github.com/spamfan/g/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/g/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "toetality",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/toetality",
+      "upload_url": "https://github.com/spamfan/toetality/upload/main",
+      "zip_url": "https://github.com/spamfan/toetality/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/toetality/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "rezimitpo",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/rezimitpo",
+      "upload_url": "https://github.com/spamfan/rezimitpo/upload/main",
+      "zip_url": "https://github.com/spamfan/rezimitpo/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/rezimitpo/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "tanktest3",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/tanktest3",
+      "upload_url": "https://github.com/spamfan/tanktest3/upload/main",
+      "zip_url": "https://github.com/spamfan/tanktest3/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "2469382.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/2469382.json"
+        },
+        {
+          "path": "__game-scripts.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/__game-scripts.js"
+        },
+        {
+          "path": "__loading__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/__loading__.js"
+        },
+        {
+          "path": "__modules__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/__modules__.js"
+        },
+        {
+          "path": "__settings__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/__settings__.js"
+        },
+        {
+          "path": "__start__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/__start__.js"
+        },
+        {
+          "path": "config.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/config.json"
+        },
+        {
+          "path": "files/assets/284635151/1/sky.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635151/1/sky.png"
+        },
+        {
+          "path": "files/assets/284635152/1/sky_negy.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635152/1/sky_negy.png"
+        },
+        {
+          "path": "files/assets/284635153/1/sky_negx.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635153/1/sky_negx.png"
+        },
+        {
+          "path": "files/assets/284635154/1/sky_posz.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635154/1/sky_posz.png"
+        },
+        {
+          "path": "files/assets/284635155/1/sky_posx.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635155/1/sky_posx.png"
+        },
+        {
+          "path": "files/assets/284635156/1/sky_negz.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635156/1/sky_negz.png"
+        },
+        {
+          "path": "files/assets/284635157/1/sky_posy.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/files/assets/284635157/1/sky_posy.png"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/index.html"
+        },
+        {
+          "path": "logo.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/logo.png"
+        },
+        {
+          "path": "manifest.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/manifest.json"
+        },
+        {
+          "path": "playcanvas-stable.min.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/playcanvas-stable.min.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktest3/main/styles.css"
+        }
+      ]
+    },
+    {
+      "name": "test1",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/test1",
+      "upload_url": "https://github.com/spamfan/test1/upload/main",
+      "zip_url": "https://github.com/spamfan/test1/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "2469329.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/2469329.json"
+        },
+        {
+          "path": "2469382.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/2469382.json"
+        },
+        {
+          "path": "__game-scripts.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/__game-scripts.js"
+        },
+        {
+          "path": "__loading__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/__loading__.js"
+        },
+        {
+          "path": "__modules__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/__modules__.js"
+        },
+        {
+          "path": "__settings__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/__settings__.js"
+        },
+        {
+          "path": "__start__.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/__start__.js"
+        },
+        {
+          "path": "config.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/config.json"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/index.html"
+        },
+        {
+          "path": "logo.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/logo.png"
+        },
+        {
+          "path": "manifest.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/manifest.json"
+        },
+        {
+          "path": "playcanvas-stable.min.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/playcanvas-stable.min.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/test1/main/styles.css"
+        }
+      ]
+    },
+    {
+      "name": "audioengine",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/audioengine",
+      "upload_url": "https://github.com/spamfan/audioengine/upload/main",
+      "zip_url": "https://github.com/spamfan/audioengine/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/audioengine/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "chessgame",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/chessgame",
+      "upload_url": "https://github.com/spamfan/chessgame/upload/main",
+      "zip_url": "https://github.com/spamfan/chessgame/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/chessgame/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "cashcats",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/cashcats",
+      "upload_url": "https://github.com/spamfan/cashcats/upload/main",
+      "zip_url": "https://github.com/spamfan/cashcats/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/cashcats/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "installmentmanagerunstable",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/installmentmanagerunstable",
+      "upload_url": "https://github.com/spamfan/installmentmanagerunstable/upload/main",
+      "zip_url": "https://github.com/spamfan/installmentmanagerunstable/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/installmentmanagerunstable/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "probe",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/probe",
+      "upload_url": "https://github.com/spamfan/probe/upload/main",
+      "zip_url": "https://github.com/spamfan/probe/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/probe/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "tanktycoonunstable",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/tanktycoonunstable",
+      "upload_url": "https://github.com/spamfan/tanktycoonunstable/upload/main",
+      "zip_url": "https://github.com/spamfan/tanktycoonunstable/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/tanktycoonunstable/main/index.html"
+        }
+      ]
+    },
+    {
+      "name": "Audio-host",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/Audio-host",
+      "upload_url": "https://github.com/spamfan/Audio-host/upload/main",
+      "zip_url": "https://github.com/spamfan/Audio-host/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "Bravo_cannon1.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Bravo_cannon1.mp3"
+        },
+        {
+          "path": "Impact.wav",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact.wav"
+        },
+        {
+          "path": "Impact1.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact1.mp3"
+        },
+        {
+          "path": "Impact2.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact2.mp3"
+        },
+        {
+          "path": "Impact3.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact3.mp3"
+        },
+        {
+          "path": "Impact4.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact4.mp3"
+        },
+        {
+          "path": "Impact5.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Impact5.mp3"
+        },
+        {
+          "path": "Nitro.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Nitro.mp3"
+        },
+        {
+          "path": "Nitro1sec.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Nitro1sec.mp3"
+        },
+        {
+          "path": "Shot.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Shot.mp3"
+        },
+        {
+          "path": "UIsoft.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/UIsoft.mp3"
+        },
+        {
+          "path": "Wind.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/Wind.mp3"
+        },
+        {
+          "path": "birds.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/birds.mp3"
+        },
+        {
+          "path": "radar.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/radar.mp3"
+        },
+        {
+          "path": "reload.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/reload.mp3"
+        },
+        {
+          "path": "shield1.mp3",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/Audio-host/main/shield1.mp3"
         }
       ]
     }
