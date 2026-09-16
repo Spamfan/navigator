@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator v0.2.0</title>
+  <title>Navigator v0.2.1</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -180,7 +180,6 @@
     .repo-card.is-dragging {
       opacity: 0.4;
       outline: 2px dashed var(--accent-blue);
-      pointer-events: none;
     }
 
     .repo-row-top {
@@ -455,6 +454,87 @@
     .hidden-banner button:hover {
       color: #58a6ff;
     }
+
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      pointer-events: none;
+      width: calc(100% - 32px);
+      max-width: 420px;
+    }
+
+    .toast {
+      pointer-events: auto;
+      background-color: #1f242c;
+      border: 1px solid var(--border);
+      color: var(--text-bright);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      touch-action: pan-y;
+    }
+
+    .toast.swiping {
+      transition: none;
+    }
+
+    .toast.fade-out {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .toast-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .toast-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .toast-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .toast-undo {
+      color: var(--accent-blue);
+    }
+
+    .toast-undo:hover {
+      text-decoration: underline;
+    }
+
+    .toast-close {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .toast-close:hover {
+      color: var(--text-bright);
+    }
   </style>
 </head>
 <body>
@@ -464,7 +544,7 @@
     <div class="header-top">
       <div class="title-group">
         <h1>Navigator</h1>
-        <span class="version-tag">v0.2.0</span>
+        <span class="version-tag">v0.2.1</span>
       </div>
 
       <form class="user-form" id="user-form" onsubmit="handleUserSubmit(event)">
@@ -501,6 +581,7 @@
   </div>
 
   <div id="hidden-bar" class="hidden-banner" style="display: none;"></div>
+  <div id="toast-container" class="toast-container"></div>
 </div>
 
 <script>
@@ -587,6 +668,102 @@
     renderRepos();
   }
 
+  let toastTimer = null;
+
+  function dismissToast() {
+    if (toastTimer) {
+      clearTimeout(toastTimer);
+      toastTimer = null;
+    }
+    const toast = document.getElementById('active-toast');
+    if (toast) {
+      toast.classList.add('fade-out');
+      setTimeout(() => {
+        const container = document.getElementById('toast-container');
+        if (container) container.innerHTML = '';
+      }, 200);
+    }
+  }
+
+  function undoHide(repoName) {
+    const prefs = getPrefs();
+    const idx = prefs.hidden.indexOf(repoName);
+    if (idx > -1) {
+      prefs.hidden.splice(idx, 1);
+      savePrefs(prefs);
+      renderRepos();
+    }
+    dismissToast();
+  }
+
+  function showToast(repoName) {
+    if (toastTimer) clearTimeout(toastTimer);
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="toast" id="active-toast">
+        <div class="toast-content">
+          <span>Hid <strong>${repoName}</strong></span>
+        </div>
+        <div class="toast-actions">
+          <button class="toast-btn toast-undo" onclick="undoHide('${repoName}')">Undo</button>
+          <button class="toast-btn toast-close" onclick="dismissToast()" title="Dismiss">✕</button>
+        </div>
+      </div>
+    `;
+
+    const toast = document.getElementById('active-toast');
+    initToastSwipe(toast);
+    toastTimer = setTimeout(dismissToast, 5000);
+  }
+
+  function initToastSwipe(toast) {
+    let startX = 0;
+    let currentDelta = 0;
+    let isTouching = false;
+
+    const onStart = (e) => {
+      if (e.target.closest('button')) return;
+      isTouching = true;
+      startX = e.clientX;
+      currentDelta = 0;
+      toast.classList.add('swiping');
+    };
+
+    const onMove = (e) => {
+      if (!isTouching) return;
+      currentDelta = e.clientX - startX;
+      toast.style.transform = `translateX(${currentDelta}px)`;
+      toast.style.opacity = `${Math.max(0.1, 1 - Math.abs(currentDelta) / 180)}`;
+    };
+
+    const onEnd = () => {
+      if (!isTouching) return;
+      isTouching = false;
+      toast.classList.remove('swiping');
+      if (Math.abs(currentDelta) > 60) {
+        const exitX = currentDelta > 0 ? 300 : -300;
+        toast.style.transform = `translateX(${exitX}px)`;
+        toast.style.opacity = '0';
+        setTimeout(dismissToast, 180);
+      } else {
+        toast.style.transform = '';
+        toast.style.opacity = '';
+      }
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onEnd);
+      window.removeEventListener('pointercancel', onEnd);
+    };
+
+    toast.addEventListener('pointerdown', (e) => {
+      onStart(e);
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onEnd);
+      window.addEventListener('pointercancel', onEnd);
+    });
+  }
+
   function toggleHide(repoName) {
     const prefs = getPrefs();
     const idx = prefs.hidden.indexOf(repoName);
@@ -594,6 +771,7 @@
       prefs.hidden.splice(idx, 1);
     } else {
       prefs.hidden.push(repoName);
+      showToast(repoName);
     }
     savePrefs(prefs);
     renderRepos();
@@ -897,32 +1075,31 @@
     e.preventDefault();
     activeDragCard = card;
     card.classList.add('is-dragging');
-    handle.setPointerCapture(e.pointerId);
 
     const onPointerMove = (ev) => {
       if (!activeDragCard) return;
-      const target = document.elementFromPoint(ev.clientX, ev.clientY);
-      if (!target) return;
-      const overCard = target.closest('.repo-card[data-fav="true"]');
-      if (overCard && overCard !== activeDragCard) {
+      const allFavCards = [...document.querySelectorAll('.repo-card[data-fav="true"]')].filter(c => c !== activeDragCard);
+      for (const overCard of allFavCards) {
         const rect = overCard.getBoundingClientRect();
-        const midY = rect.top + rect.height / 2;
-        const parent = overCard.parentNode;
-        if (ev.clientY < midY) {
-          parent.insertBefore(activeDragCard, overCard);
-        } else {
-          parent.insertBefore(activeDragCard, overCard.nextSibling);
+        if (ev.clientY >= rect.top && ev.clientY <= rect.bottom) {
+          const midY = rect.top + rect.height / 2;
+          const parent = overCard.parentNode;
+          if (ev.clientY < midY) {
+            parent.insertBefore(activeDragCard, overCard);
+          } else {
+            parent.insertBefore(activeDragCard, overCard.nextSibling);
+          }
+          break;
         }
       }
     };
 
     const onPointerUp = (ev) => {
-      if (!activeDragCard) return;
-      handle.releasePointerCapture(ev.pointerId);
-      handle.removeEventListener('pointermove', onPointerMove);
-      handle.removeEventListener('pointerup', onPointerUp);
-      handle.removeEventListener('pointercancel', onPointerUp);
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
 
+      if (!activeDragCard) return;
       activeDragCard.classList.remove('is-dragging');
       activeDragCard = null;
 
@@ -934,9 +1111,9 @@
       renderRepos();
     };
 
-    handle.addEventListener('pointermove', onPointerMove);
-    handle.addEventListener('pointerup', onPointerUp);
-    handle.addEventListener('pointercancel', onPointerUp);
+    window.addEventListener('pointermove', onPointerMove, { passive: false });
+    window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
   }
 
   function renderRepos() {
@@ -978,13 +1155,13 @@
         <div class="repo-card" data-repo="${repo.name}" data-fav="${isFav}">
           <div class="repo-row-top">
             <div class="repo-id-group">
-              ${isFav ? `<span class="drag-handle" onpointerdown="handleDragStart(event)" title="Drag to reorder">⋮⋮</span>` : ''}
               <a href="${pagesUrl}" target="_blank" class="btn btn-blue btn-primary-goto" onclick="recordVisit('${repo.name}')">Go to ${repo.name}</a>
               <a href="${repo.repo_url}" target="_blank" class="repo-text-link">Repo ↗</a>
             </div>
             <div class="repo-tools">
               <button class="tool-btn ${isFav ? 'star-active' : ''}" onclick="toggleFavorite('${repo.name}')" title="Favorite repository">${isFav ? '★' : '☆'}</button>
               <button class="tool-btn" onclick="toggleHide('${repo.name}')" title="Hide repository">✕</button>
+              ${isFav ? `<span class="drag-handle" onpointerdown="handleDragStart(event)" title="Drag to reorder">⋮⋮</span>` : ''}
             </div>
           </div>
           <div class="repo-row-bottom">
