@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator v0.1.0</title>
+  <title>Navigator v0.2.0</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -177,45 +177,78 @@
       padding: 14px 16px;
     }
 
-    .repo-header {
+    .repo-card.is-dragging {
+      opacity: 0.4;
+      outline: 2px dashed var(--accent-blue);
+      pointer-events: none;
+    }
+
+    .repo-row-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .repo-name-box {
+    .repo-row-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .repo-id-group {
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .repo-link {
-      color: var(--accent-blue);
+    .repo-tools {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .repo-quick-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .repo-text-link {
+      color: var(--text-muted);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 2px 4px;
     }
 
-    .repo-link:hover {
+    .repo-text-link:hover {
+      color: var(--accent-blue);
       text-decoration: underline;
     }
 
-    .branch-badge {
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 10px;
-      background-color: var(--btn-gray);
+    .drag-handle {
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
       color: var(--text-muted);
-      border: 1px solid var(--border);
+      font-size: 1.1rem;
+      padding: 0 4px;
+      line-height: 1;
     }
 
-    .action-group {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+    .drag-handle:active {
+      cursor: grabbing;
+    }
+
+    .btn-sm {
+      padding: 3px 8px;
+      font-size: 0.75rem;
     }
 
     .btn {
@@ -267,7 +300,7 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      margin-top: 6px;
+      margin-top: 0;
       padding: 0;
     }
 
@@ -431,12 +464,12 @@
     <div class="header-top">
       <div class="title-group">
         <h1>Navigator</h1>
-        <span class="version-tag">v0.1.0</span>
+        <span class="version-tag">v0.2.0</span>
       </div>
 
       <form class="user-form" id="user-form" onsubmit="handleUserSubmit(event)">
         <input type="text" class="input-field" id="user-input" placeholder="GitHub username" autocomplete="off" spellcheck="false">
-        <button type="submit" class="btn btn-purple">Switch</button>
+        <button type="submit" class="btn">Switch</button>
       </form>
     </div>
 
@@ -622,6 +655,7 @@
     currentUser = requestedUser ? requestedUser.trim() : DEFAULT_USER;
     document.getElementById('user-input').value = currentUser;
 
+    let hasValidCache = false;
     const cachedStr = localStorage.getItem(getStorageKey(currentUser));
     if (cachedStr) {
       try {
@@ -631,31 +665,39 @@
         checkStaleSnapshot(lastSyncTimestamp);
         updateStatusUI();
         renderRepos();
-        return;
+        hasValidCache = true;
       } catch (e) {
         localStorage.removeItem(getStorageKey(currentUser));
       }
     }
 
-    if (currentUser.toLowerCase() === DEFAULT_USER.toLowerCase()) {
+    const isDefaultUser = currentUser.toLowerCase() === DEFAULT_USER.toLowerCase();
+    const SIX_HOURS = 6 * 60 * 60 * 1000;
+    const cacheIsOld = (Date.now() - lastSyncTimestamp) > SIX_HOURS;
+
+    if (isDefaultUser && (!hasValidCache || cacheIsOld)) {
       try {
         const res = await fetch('repos.json');
         if (res.ok) {
           const fileData = await res.json();
-          reposData = fileData.repos || [];
-          lastSyncTimestamp = fileData.synced_at || Date.now();
-          checkStaleSnapshot(lastSyncTimestamp);
-          saveToCache();
-          updateStatusUI();
-          renderRepos();
-          return;
+          if (!hasValidCache || (fileData.synced_at && fileData.synced_at > lastSyncTimestamp)) {
+            reposData = fileData.repos || [];
+            lastSyncTimestamp = fileData.synced_at || Date.now();
+            checkStaleSnapshot(lastSyncTimestamp);
+            saveToCache();
+            updateStatusUI();
+            renderRepos();
+            return;
+          }
         }
       } catch (e) {
-        // Fallback to live API fetch
+        // Fallback continues below
       }
     }
 
-    await syncNow();
+    if (!hasValidCache) {
+      await syncNow();
+    }
   }
 
   function saveToCache() {
@@ -729,12 +771,12 @@
 
     if (drawer.classList.contains('open')) {
       drawer.classList.remove('open');
-      toggleBtn.innerText = 'Download a file ▼';
+      toggleBtn.innerText = 'Files ▼';
       return;
     }
 
     drawer.classList.add('open');
-    toggleBtn.innerText = 'Hide files ▲';
+    toggleBtn.innerText = 'Files ▲';
 
     const repoObj = reposData.find(r => r.name === repoName);
     if (repoObj && repoObj.files && repoObj.files.length > 0) {
@@ -812,13 +854,24 @@
   }
 
   function getSortedRepos(repos, sortMode, prefs, visits) {
-    const sorted = [...repos];
-    sorted.sort((a, b) => {
-      const aFav = prefs.favorites.includes(a.name);
-      const bFav = prefs.favorites.includes(b.name);
-      if (aFav && !bFav) return -1;
-      if (!aFav && bFav) return 1;
+    const favRepos = [];
+    const unfavRepos = [];
 
+    repos.forEach(r => {
+      if (prefs.favorites.includes(r.name)) {
+        favRepos.push(r);
+      } else {
+        unfavRepos.push(r);
+      }
+    });
+
+    favRepos.sort((a, b) => {
+      const idxA = prefs.favorites.indexOf(a.name);
+      const idxB = prefs.favorites.indexOf(b.name);
+      return idxA - idxB;
+    });
+
+    unfavRepos.sort((a, b) => {
       if (sortMode === 'visited') {
         const aVisit = visits[a.name] || 0;
         const bVisit = visits[b.name] || 0;
@@ -829,7 +882,61 @@
         return 0;
       }
     });
-    return sorted;
+
+    return [...favRepos, ...unfavRepos];
+  }
+
+  let activeDragCard = null;
+
+  function handleDragStart(e) {
+    const handle = e.target.closest('.drag-handle');
+    if (!handle) return;
+    const card = handle.closest('.repo-card');
+    if (!card) return;
+
+    e.preventDefault();
+    activeDragCard = card;
+    card.classList.add('is-dragging');
+    handle.setPointerCapture(e.pointerId);
+
+    const onPointerMove = (ev) => {
+      if (!activeDragCard) return;
+      const target = document.elementFromPoint(ev.clientX, ev.clientY);
+      if (!target) return;
+      const overCard = target.closest('.repo-card[data-fav="true"]');
+      if (overCard && overCard !== activeDragCard) {
+        const rect = overCard.getBoundingClientRect();
+        const midY = rect.top + rect.height / 2;
+        const parent = overCard.parentNode;
+        if (ev.clientY < midY) {
+          parent.insertBefore(activeDragCard, overCard);
+        } else {
+          parent.insertBefore(activeDragCard, overCard.nextSibling);
+        }
+      }
+    };
+
+    const onPointerUp = (ev) => {
+      if (!activeDragCard) return;
+      handle.releasePointerCapture(ev.pointerId);
+      handle.removeEventListener('pointermove', onPointerMove);
+      handle.removeEventListener('pointerup', onPointerUp);
+      handle.removeEventListener('pointercancel', onPointerUp);
+
+      activeDragCard.classList.remove('is-dragging');
+      activeDragCard = null;
+
+      const prefs = getPrefs();
+      const reorderedSubset = [...document.querySelectorAll('.repo-card[data-fav="true"]')].map(el => el.dataset.repo);
+      const remaining = prefs.favorites.filter(name => !reorderedSubset.includes(name));
+      prefs.favorites = [...reorderedSubset, ...remaining];
+      savePrefs(prefs);
+      renderRepos();
+    };
+
+    handle.addEventListener('pointermove', onPointerMove);
+    handle.addEventListener('pointerup', onPointerUp);
+    handle.addEventListener('pointercancel', onPointerUp);
   }
 
   function renderRepos() {
@@ -868,22 +975,27 @@
       const pagesUrl = isUserPage ? `https://${currentUser}.github.io/` : `https://${currentUser}.github.io/${repo.name}/`;
 
       html += `
-        <div class="repo-card">
-          <div class="repo-header">
-            <div class="repo-name-box">
-              <button class="tool-btn ${isFav ? 'star-active' : ''}" onclick="toggleFavorite('${repo.name}')" title="Favorite repository">${isFav ? '★' : '☆'}</button>
+        <div class="repo-card" data-repo="${repo.name}" data-fav="${isFav}">
+          <div class="repo-row-top">
+            <div class="repo-id-group">
+              ${isFav ? `<span class="drag-handle" onpointerdown="handleDragStart(event)" title="Drag to reorder">⋮⋮</span>` : ''}
               <a href="${pagesUrl}" target="_blank" class="btn btn-blue btn-primary-goto" onclick="recordVisit('${repo.name}')">Go to ${repo.name}</a>
-              <span class="branch-badge">${repo.branch}</span>
+              <a href="${repo.repo_url}" target="_blank" class="repo-text-link">Repo ↗</a>
             </div>
-            <div class="action-group">
-              <a href="${repo.repo_url}" target="_blank" class="btn">${repo.name} repo</a>
-              <a href="${repo.upload_url}" target="_blank" class="btn btn-green">Upload</a>
+            <div class="repo-tools">
+              <button class="tool-btn ${isFav ? 'star-active' : ''}" onclick="toggleFavorite('${repo.name}')" title="Favorite repository">${isFav ? '★' : '☆'}</button>
               <button class="tool-btn" onclick="toggleHide('${repo.name}')" title="Hide repository">✕</button>
             </div>
           </div>
-          <button id="toggle-btn-${repo.name}" class="files-toggle-btn" onclick="loadRepoFiles('${repo.name}', '${repo.branch}')">
-            Download a file ▼
-          </button>
+          <div class="repo-row-bottom">
+            <button id="toggle-btn-${repo.name}" class="files-toggle-btn" onclick="loadRepoFiles('${repo.name}', '${repo.branch}')">
+              Files ▼
+            </button>
+            <div class="repo-quick-actions">
+              <a href="${repo.upload_url}" target="_blank" class="btn btn-green btn-sm">↑ Upload</a>
+              <a href="${repo.zip_url}" target="_blank" class="btn btn-blue btn-sm" download>↓ ZIP</a>
+            </div>
+          </div>
           <div id="drawer-${repo.name}" class="files-drawer"></div>
         </div>
       `;
