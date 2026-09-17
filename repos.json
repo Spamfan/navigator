@@ -1,7 +1,60 @@
 {
   "user": "spamfan",
-  "synced_at": 1789658973475,
+  "synced_at": 1789675638067,
   "repos": [
+    {
+      "name": "workflowoptimizer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/workflowoptimizer",
+      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
+      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "app.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/app.js"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
+        },
+        {
+          "path": "js/app.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
+        },
+        {
+          "path": "js/auth.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
+        },
+        {
+          "path": "js/ocr.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/ocr.js"
+        },
+        {
+          "path": "js/scanner.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/scanner.js"
+        },
+        {
+          "path": "js/staging.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/staging.js"
+        },
+        {
+          "path": "scanner.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/scanner.js"
+        },
+        {
+          "path": "stats.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
+        },
+        {
+          "path": "wfo-ldd-v8.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v8.md"
+        }
+      ]
+    },
     {
       "name": "navigator",
       "branch": "main",
@@ -130,51 +183,6 @@
         {
           "path": "styles.css",
           "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/styles.css"
-        }
-      ]
-    },
-    {
-      "name": "workflowoptimizer",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/workflowoptimizer",
-      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
-      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
-        },
-        {
-          "path": "js/app.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
-        },
-        {
-          "path": "js/auth.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
-        },
-        {
-          "path": "js/ocr.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/ocr.js"
-        },
-        {
-          "path": "js/scanner.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/scanner.js"
-        },
-        {
-          "path": "js/staging.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/staging.js"
-        },
-        {
-          "path": "stats.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
-        },
-        {
-          "path": "styles.css",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
-        },
-        {
-          "path": "wfo-ldd-v8.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v8.md"
         }
       ]
     },
