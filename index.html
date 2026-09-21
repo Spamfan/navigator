@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator v0.2.1</title>
+  <title>Navigator v0.2.2</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -78,24 +78,25 @@
       font-weight: 600;
     }
 
-    .user-form {
+    .header-nav-links {
       display: flex;
-      gap: 8px;
       align-items: center;
+      gap: 16px;
     }
 
-    .input-field {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-bright);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      outline: none;
+    .header-nav-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 4px 6px;
+      color: #58a6ff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .input-field:focus {
-      border-color: var(--accent-blue);
+    .header-nav-link:hover {
+      text-decoration: underline;
     }
 
     .status-bar {
@@ -103,23 +104,81 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       font-size: 0.85rem;
       color: var(--text-muted);
     }
 
-    .sync-link {
-      color: var(--accent-blue);
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 0.85rem;
-      text-decoration: underline;
-      padding: 0;
+    .status-main {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
-    .sync-link:hover {
-      color: #58a6ff;
+    .sync-btn {
+      background: var(--btn-gray);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+
+    .sync-btn:hover {
+      background-color: var(--btn-gray-hover);
+      color: var(--text-bright);
+    }
+
+    .sync-btn.spinning svg {
+      animation: spin 0.75s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .user-pill-btn {
+      background: var(--btn-gray);
+      border: 1px solid var(--border);
+      color: var(--text-bright);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 2px 7px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: border-color 0.15s;
+    }
+
+    .user-pill-btn:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .user-pill-btn .edit-icon {
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .inline-user-input {
+      background-color: var(--card-bg);
+      border: 1px solid var(--accent-blue);
+      color: var(--text-bright);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      outline: none;
+      width: 105px;
     }
 
     .quota-pill {
@@ -544,21 +603,33 @@
     <div class="header-top">
       <div class="title-group">
         <h1>Navigator</h1>
-        <span class="version-tag">v0.2.1</span>
+        <span class="version-tag">v0.2.2</span>
       </div>
 
-      <form class="user-form" id="user-form" onsubmit="handleUserSubmit(event)">
-        <input type="text" class="input-field" id="user-input" placeholder="GitHub username" autocomplete="off" spellcheck="false">
-        <button type="submit" class="btn">Switch</button>
-      </form>
+      <div class="header-nav-links">
+        <a href="https://spamfan.github.io/patcher/" id="link-patcher" class="header-nav-link" target="_self">patcher</a>
+        <a href="https://spamfan.github.io/mdviewer/" id="link-mdviewer" class="header-nav-link" target="_self">mdviewer</a>
+      </div>
     </div>
 
     <div class="status-bar">
-      <div>
-        Active account: <strong id="current-user-display" style="color: var(--text-bright);">spamfan</strong>
-        <span style="margin: 0 6px;">•</span>
-        <span id="last-sync-text">Checking data...</span>
-        <button class="sync-link" id="check-again-btn" onclick="syncNow()">[Check again now]</button>
+      <div class="status-main">
+        <button class="sync-btn" id="check-again-btn" onclick="syncNow()" title="Check again now" aria-label="Check again now">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .655-.835zm12.59-1.01a.75.75 0 0 1-.834-.656 5.5 5.5 0 0 0-9.592-2.97l1.204 1.204a.25.25 0 0 1-.177.427H1.25a.25.25 0 0 1-.25-.25V1.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-.655.835z"/>
+          </svg>
+        </button>
+        <span>Checked</span>
+        <span id="user-badge-container">
+          <button class="user-pill-btn" id="user-pill-btn" onclick="enableInlineUserEdit()" title="Switch GitHub account">
+            <span id="current-user-display">spamfan</span>
+            <svg class="edit-icon" width="11" height="11" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25a1.75 1.75 0 0 1 .445-.758l8.61-8.61zm1.414 1.06a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086zM10.104 4.457 2.978 11.583c-.07.07-.123.156-.153.252l-.588 2.057 2.057-.588c.096-.03.182-.083.252-.153l7.126-7.126-1.568-1.568z"/>
+            </svg>
+          </button>
+        </span>
+        <span>repos</span>
+        <span id="last-sync-text">just now.</span>
       </div>
       <div class="quota-pill" id="quota-display">Quota: --/60</div>
     </div>
@@ -593,20 +664,89 @@
   let relativeTimeTimer = null;
 
   function formatRelativeTime(ts) {
-    if (!ts) return 'Never checked';
+    if (!ts) return 'never.';
     const elapsedSeconds = Math.floor((Date.now() - ts) / 1000);
-    if (elapsedSeconds < 10) return 'Checked just now';
-    if (elapsedSeconds < 60) return `Checked ${elapsedSeconds}s ago`;
+    if (elapsedSeconds < 10) return 'just now.';
+    if (elapsedSeconds < 60) return `${elapsedSeconds}s ago.`;
     const elapsedMinutes = Math.floor(elapsedSeconds / 60);
-    if (elapsedMinutes < 60) return `Checked ${elapsedMinutes}m ago`;
+    if (elapsedMinutes < 60) return `${elapsedMinutes}m ago.`;
     const elapsedHours = Math.floor(elapsedMinutes / 60);
-    if (elapsedHours < 24) return `Checked ${elapsedHours}h ago`;
-    return `Checked ${Math.floor(elapsedHours / 24)}d ago`;
+    const remMinutes = elapsedMinutes % 60;
+    if (elapsedHours < 24) {
+      return remMinutes > 0 ? `${elapsedHours}h ${remMinutes}m ago.` : `${elapsedHours}h ago.`;
+    }
+    return `${Math.floor(elapsedHours / 24)}d ago.`;
   }
 
   function updateStatusUI() {
-    document.getElementById('current-user-display').innerText = currentUser;
-    document.getElementById('last-sync-text').innerText = formatRelativeTime(lastSyncTimestamp);
+    const userDisplay = document.getElementById('current-user-display');
+    if (userDisplay) userDisplay.innerText = currentUser;
+    const syncText = document.getElementById('last-sync-text');
+    if (syncText) syncText.innerText = formatRelativeTime(lastSyncTimestamp);
+    const patcherLink = document.getElementById('link-patcher');
+    if (patcherLink) patcherLink.href = `https://${currentUser}.github.io/patcher/`;
+    const mdviewerLink = document.getElementById('link-mdviewer');
+    if (mdviewerLink) mdviewerLink.href = `https://${currentUser}.github.io/mdviewer/`;
+  }
+
+  function enableInlineUserEdit() {
+    const container = document.getElementById('user-badge-container');
+    if (!container) return;
+    container.innerHTML = `<input type="text" class="inline-user-input" id="inline-user-input" value="${currentUser}" autocomplete="off" spellcheck="false">`;
+    const input = document.getElementById('inline-user-input');
+    input.focus();
+    input.select();
+
+    let committed = false;
+    const finish = (apply) => {
+      if (committed) return;
+      committed = true;
+      if (apply) {
+        commitUserSwitch(input.value.trim());
+      } else {
+        renderUserBadge();
+      }
+    };
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        finish(true);
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        finish(false);
+      }
+    });
+
+    input.addEventListener('blur', () => {
+      finish(true);
+    });
+  }
+
+  function renderUserBadge() {
+    const container = document.getElementById('user-badge-container');
+    if (!container) return;
+    container.innerHTML = `
+      <button class="user-pill-btn" id="user-pill-btn" onclick="enableInlineUserEdit()" title="Switch GitHub account">
+        <span id="current-user-display">${currentUser}</span>
+        <svg class="edit-icon" width="11" height="11" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25a1.75 1.75 0 0 1 .445-.758l8.61-8.61zm1.414 1.06a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354l-1.086-1.086zM10.104 4.457 2.978 11.583c-.07.07-.123.156-.153.252l-.588 2.057 2.057-.588c.096-.03.182-.083.252-.153l7.126-7.126-1.568-1.568z"/>
+        </svg>
+      </button>
+    `;
+  }
+
+  function commitUserSwitch(inputVal) {
+    if (inputVal && inputVal.toLowerCase() !== currentUser.toLowerCase()) {
+      currentUser = inputVal;
+      reposData = [];
+      lastSyncTimestamp = 0;
+      renderUserBadge();
+      updateStatusUI();
+      syncNow();
+    } else {
+      renderUserBadge();
+    }
   }
 
   function saveQuota(remaining, limit, resetEpoch) {
@@ -831,7 +971,11 @@
     const params = new URLSearchParams(window.location.search);
     const requestedUser = params.get('u') || params.get('user');
     currentUser = requestedUser ? requestedUser.trim() : DEFAULT_USER;
-    document.getElementById('user-input').value = currentUser;
+
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const filterInput = document.getElementById('filter-input');
+      if (filterInput) filterInput.focus();
+    }
 
     let hasValidCache = false;
     const cachedStr = localStorage.getItem(getStorageKey(currentUser));
@@ -893,7 +1037,7 @@
     const warnBox = document.getElementById('warning-box');
     errorBox.style.display = 'none';
     if (warnBox) warnBox.style.display = 'none';
-    syncBtn.innerText = '[Checking...]';
+    syncBtn.classList.add('spinning');
     syncBtn.disabled = true;
 
     try {
@@ -938,7 +1082,7 @@
       errorBox.innerText = err.message;
       errorBox.style.display = 'block';
     } finally {
-      syncBtn.innerText = '[Check again now]';
+      syncBtn.classList.remove('spinning');
       syncBtn.disabled = false;
     }
   }
@@ -1017,18 +1161,6 @@
   function handleFilter(term) {
     currentFilter = term.toLowerCase().trim();
     renderRepos();
-  }
-
-  function handleUserSubmit(e) {
-    e.preventDefault();
-    const inputVal = document.getElementById('user-input').value.trim();
-    if (inputVal && inputVal.toLowerCase() !== currentUser.toLowerCase()) {
-      currentUser = inputVal;
-      reposData = [];
-      lastSyncTimestamp = 0;
-      updateStatusUI();
-      syncNow();
-    }
   }
 
   function getSortedRepos(repos, sortMode, prefs, visits) {
@@ -1198,6 +1330,15 @@
 
   // Periodic relative time ticker
   relativeTimeTimer = setInterval(updateStatusUI, 30000);
+
+  // Global hotkey: '/' focuses filter input
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== document.getElementById('filter-input') && !document.activeElement.matches('input, textarea')) {
+      e.preventDefault();
+      const fi = document.getElementById('filter-input');
+      if (fi) fi.focus();
+    }
+  });
 
   // Initialize
   loadInitialData();
