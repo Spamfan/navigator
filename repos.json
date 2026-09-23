@@ -1,7 +1,72 @@
 {
   "user": "spamfan",
-  "synced_at": 1790126517574,
+  "synced_at": 1790157038093,
   "repos": [
+    {
+      "name": "optimizer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/optimizer",
+      "upload_url": "https://github.com/spamfan/optimizer/upload/main",
+      "zip_url": "https://github.com/spamfan/optimizer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/purge_cdn.yml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/.github/workflows/purge_cdn.yml"
+        },
+        {
+          "path": "404.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/404.html"
+        },
+        {
+          "path": "Optimizer LDD v13.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/Optimizer LDD v13.md"
+        },
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/apple-touch-icon.png"
+        },
+        {
+          "path": "edlp_data.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/edlp_data.json"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon.ico"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/index.html"
+        },
+        {
+          "path": "inventory_data.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/inventory_data.json"
+        },
+        {
+          "path": "script.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/script.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/styles.css"
+        }
+      ]
+    },
     {
       "name": "navigator",
       "branch": "main",
@@ -90,67 +155,6 @@
         {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/patcher/main/index.html"
-        }
-      ]
-    },
-    {
-      "name": "optimizer",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/optimizer",
-      "upload_url": "https://github.com/spamfan/optimizer/upload/main",
-      "zip_url": "https://github.com/spamfan/optimizer/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": ".github/workflows/purge_cdn.yml",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/.github/workflows/purge_cdn.yml"
-        },
-        {
-          "path": "404.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/404.html"
-        },
-        {
-          "path": "android-chrome-192x192.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-192x192.png"
-        },
-        {
-          "path": "android-chrome-512x512.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/android-chrome-512x512.png"
-        },
-        {
-          "path": "apple-touch-icon.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/apple-touch-icon.png"
-        },
-        {
-          "path": "edlp_data.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/edlp_data.json"
-        },
-        {
-          "path": "favicon-16x16.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-16x16.png"
-        },
-        {
-          "path": "favicon-32x32.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon-32x32.png"
-        },
-        {
-          "path": "favicon.ico",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/favicon.ico"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/index.html"
-        },
-        {
-          "path": "inventory_data.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/inventory_data.json"
-        },
-        {
-          "path": "script.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/script.js"
-        },
-        {
-          "path": "styles.css",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/optimizer/main/styles.css"
         }
       ]
     },
