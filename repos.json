@@ -1,32 +1,7 @@
 {
   "user": "spamfan",
-  "synced_at": 1790212577550,
+  "synced_at": 1790243347382,
   "repos": [
-    {
-      "name": "navigator",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/navigator",
-      "upload_url": "https://github.com/spamfan/navigator/upload/main",
-      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": ".github/workflows/update.yaml",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
-        },
-        {
-          "path": "Navigator LDD2.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
-        },
-        {
-          "path": "repos.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
-        }
-      ]
-    },
     {
       "name": "workflowoptimizer",
       "branch": "main",
@@ -39,12 +14,24 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
         },
         {
+          "path": "js/api.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/api.js"
+        },
+        {
           "path": "js/app.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
         },
         {
           "path": "js/auth.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
+        },
+        {
+          "path": "js/barcode.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/barcode.js"
+        },
+        {
+          "path": "js/crypto.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/crypto.js"
         },
         {
           "path": "js/ocr.js",
@@ -77,6 +64,31 @@
         {
           "path": "wfo-ldd-v15.md",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v15.md"
+        }
+      ]
+    },
+    {
+      "name": "navigator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/navigator",
+      "upload_url": "https://github.com/spamfan/navigator/upload/main",
+      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/update.yaml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+        },
+        {
+          "path": "Navigator LDD2.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+        },
+        {
+          "path": "repos.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
         }
       ]
     },
