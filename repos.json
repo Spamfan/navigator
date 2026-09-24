@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1790243347382,
+  "synced_at": 1790264782563,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -64,6 +64,10 @@
         {
           "path": "wfo-ldd-v15.md",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v15.md"
+        },
+        {
+          "path": "wfo-ldd-v16.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v16.md"
         }
       ]
     },
