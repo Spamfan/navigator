@@ -1,32 +1,7 @@
 {
   "user": "spamfan",
-  "synced_at": 1790595336363,
+  "synced_at": 1790634507628,
   "repos": [
-    {
-      "name": "navigator",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/navigator",
-      "upload_url": "https://github.com/spamfan/navigator/upload/main",
-      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": ".github/workflows/update.yaml",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
-        },
-        {
-          "path": "Navigator LDD2.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
-        },
-        {
-          "path": "repos.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
-        }
-      ]
-    },
     {
       "name": "workflowoptimizer",
       "branch": "main",
@@ -35,8 +10,16 @@
       "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
       "files": [
         {
-          "path": "att.jpg",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/att.jpg"
+          "path": "auth-spec.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth-spec.md"
+        },
+        {
+          "path": "crimson-ldd-v3.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v3.md"
+        },
+        {
+          "path": "data-spec.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/data-spec.md"
         },
         {
           "path": "index.html",
@@ -63,44 +46,45 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/crypto.js"
         },
         {
-          "path": "js/ocr.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/ocr.js"
-        },
-        {
           "path": "js/print.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/print.js"
-        },
-        {
-          "path": "js/scanner.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/scanner.js"
-        },
-        {
-          "path": "js/staging.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/staging.js"
         },
         {
           "path": "stats.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
         },
         {
-          "path": "stocks.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stocks.json"
-        },
-        {
           "path": "styles.css",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
         },
         {
-          "path": "tmo.jpg",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tmo.jpg"
-        },
-        {
-          "path": "vzw.jpg",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/vzw.jpg"
-        },
-        {
           "path": "wfo-ldd-v21.md",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v21.md"
+        }
+      ]
+    },
+    {
+      "name": "navigator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/navigator",
+      "upload_url": "https://github.com/spamfan/navigator/upload/main",
+      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/update.yaml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+        },
+        {
+          "path": "Navigator LDD2.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+        },
+        {
+          "path": "repos.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
         }
       ]
     },
