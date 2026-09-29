@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1790634507628,
+  "synced_at": 1790649140329,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -26,24 +26,12 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
         },
         {
-          "path": "js/api.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/api.js"
-        },
-        {
           "path": "js/app.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
         },
         {
           "path": "js/auth.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
-        },
-        {
-          "path": "js/barcode.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/barcode.js"
-        },
-        {
-          "path": "js/crypto.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/crypto.js"
         },
         {
           "path": "js/print.js",
@@ -56,10 +44,6 @@
         {
           "path": "styles.css",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
-        },
-        {
-          "path": "wfo-ldd-v21.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/wfo-ldd-v21.md"
         }
       ]
     },
