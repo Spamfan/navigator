@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigator v0.2.2</title>
+  <title>Navigator v0.3.0</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -603,12 +603,11 @@
     <div class="header-top">
       <div class="title-group">
         <h1>Navigator</h1>
-        <span class="version-tag">v0.2.2</span>
+        <span class="version-tag">v0.3.0</span>
       </div>
 
       <div class="header-nav-links">
         <a href="https://spamfan.github.io/patcher/" id="link-patcher" class="header-nav-link" target="_self">patcher</a>
-        <a href="https://spamfan.github.io/mdviewer/" id="link-mdviewer" class="header-nav-link" target="_self">mdviewer</a>
       </div>
     </div>
 
@@ -685,8 +684,6 @@
     if (syncText) syncText.innerText = formatRelativeTime(lastSyncTimestamp);
     const patcherLink = document.getElementById('link-patcher');
     if (patcherLink) patcherLink.href = `https://${currentUser}.github.io/patcher/`;
-    const mdviewerLink = document.getElementById('link-mdviewer');
-    if (mdviewerLink) mdviewerLink.href = `https://${currentUser}.github.io/mdviewer/`;
   }
 
   function enableInlineUserEdit() {
@@ -1131,6 +1128,10 @@
       if (repoObj) {
         repoObj.files = files;
         saveToCache();
+        const actionsEl = document.querySelector(`.repo-card[data-repo="${repoName}"] .repo-quick-actions`);
+        if (actionsEl) {
+          actionsEl.innerHTML = buildQuickActionsHtml(repoObj);
+        }
       }
       renderFilesDrawer(repoName, branch, files);
     } catch (err) {
@@ -1248,6 +1249,37 @@
     window.addEventListener('pointercancel', onPointerUp);
   }
 
+  function buildQuickActionsHtml(repo) {
+    const files = repo.files || [];
+    const subDirs = [];
+    files.forEach(f => {
+      if (f.path && f.path.includes('/')) {
+        const seg = f.path.split('/')[0];
+        if (seg && seg !== '.github' && !subDirs.includes(seg)) {
+          subDirs.push(seg);
+        }
+      }
+    });
+
+    const folderButtons = subDirs.slice(0, 3).map(dir =>
+      `<a href="https://github.com/${currentUser}/${repo.name}/upload/${repo.branch}/${dir}" target="_blank" class="btn btn-green btn-sm">↑ Upload (/${dir})</a>`
+    ).join('');
+
+    const indexFile = files.find(f => f.path === 'index.html') || files.find(f => f.path.endsWith('/index.html'));
+    let indexButton = '';
+    if (indexFile) {
+      const rawUrl = indexFile.raw_url || `https://raw.githubusercontent.com/${currentUser}/${repo.name}/${repo.branch}/${indexFile.path}`;
+      indexButton = `<a href="${rawUrl}" target="_blank" download="index.html" class="btn btn-blue btn-sm">↓ index.html</a>`;
+    }
+
+    return `
+      <a href="${repo.upload_url}" target="_blank" class="btn btn-green btn-sm">↑ Upload (main)</a>
+      ${folderButtons}
+      <a href="${repo.zip_url}" target="_blank" class="btn btn-blue btn-sm" download>↓ ZIP (all)</a>
+      ${indexButton}
+    `;
+  }
+
   function renderRepos() {
     const container = document.getElementById('repo-list');
     const prefs = getPrefs();
@@ -1301,8 +1333,7 @@
               Files ▼
             </button>
             <div class="repo-quick-actions">
-              <a href="${repo.upload_url}" target="_blank" class="btn btn-green btn-sm">↑ Upload</a>
-              <a href="${repo.zip_url}" target="_blank" class="btn btn-blue btn-sm" download>↓ ZIP</a>
+              ${buildQuickActionsHtml(repo)}
             </div>
           </div>
           <div id="drawer-${repo.name}" class="files-drawer"></div>

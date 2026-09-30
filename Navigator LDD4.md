@@ -141,7 +141,7 @@
 * **Component Tokens:**
   * User Switcher: Inline editable badge in status bar.
   * Status & Quota Pills: Fixed-metric indicators with live ticker updates.
-  * Repo Cards: Dual-row layout with primary action buttons (`Go to repo`), quick links (`Repo ↗`), star favorites, and hide controls.
+  * Repo Cards: Dual-row layout with primary action buttons (`Go to repo`), quick links (`Repo ↗`), star favorites, hide controls, and dynamic action buttons (Upload main, up to 3 subfolder uploads, ZIP all, index.html download).
   * Drag Handles: Active for favorited repos (`⋮⋮`) with pointer reorder mechanics.
   * Files Drawer: Collapsible recursive file explorer per repository.
   * Toast Alerts: Bottom-centered snackbar with swipe dismissal and single-click undo.
@@ -171,10 +171,10 @@
 ### 6. BASELINE FLOOR & FILE TREE
 
 #### Version Floor
-* **App Baseline:** `v0.2.2`
-* **`index.html`:** `v0.2.2`
+* **App Baseline:** `v0.3.0`
+* **`index.html`:** `v0.3.0`
 * **`repos.json`:** `synced_at` snapshot
-* **`Navigator LDD3.md`:** `v4.0.0`
+* **`Navigator LDD4.md`:** `v4.1.0`
 
 #### File Tree
     .
@@ -193,7 +193,6 @@
 Navigator operates as the central cockpit and discovery hub across all repositories in the user workspace:
 * **Direct Top Navigation Links:**
   * `patcher` -> `https://{user}.github.io/patcher/` (Automated regex patch application tool)
-  * `mdviewer` -> `https://{user}.github.io/mdviewer/` (Markdown previewer and doc reader)
 * **Target Launch Links:**
   * User Pages: `https://{user}.github.io/`
   * Project Pages: `https://{user}.github.io/{repo}/`
