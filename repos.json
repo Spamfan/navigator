@@ -1,29 +1,49 @@
 {
   "user": "spamfan",
-  "synced_at": 1790716771963,
+  "synced_at": 1790733340134,
   "repos": [
     {
-      "name": "navigator",
+      "name": "spamfan.github.io",
       "branch": "main",
-      "repo_url": "https://github.com/Spamfan/navigator",
-      "upload_url": "https://github.com/spamfan/navigator/upload/main",
-      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "repo_url": "https://github.com/Spamfan/spamfan.github.io",
+      "upload_url": "https://github.com/spamfan/spamfan.github.io/upload/main",
+      "zip_url": "https://github.com/spamfan/spamfan.github.io/archive/refs/heads/main.zip",
       "files": [
         {
-          "path": ".github/workflows/update.yaml",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+          "path": "404.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/404.html"
         },
         {
-          "path": "Navigator LDD2.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon.ico"
         },
         {
           "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/index.html"
         },
         {
-          "path": "repos.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+          "path": "site.webmanifest",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/site.webmanifest"
         }
       ]
     },
@@ -39,8 +59,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth-spec.md"
         },
         {
-          "path": "crimson-ldd-v3.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v3.md"
+          "path": "crimson-ldd-v5.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v5.md"
         },
         {
           "path": "data-spec.md",
@@ -69,6 +89,31 @@
         {
           "path": "styles.css",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
+        }
+      ]
+    },
+    {
+      "name": "navigator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/navigator",
+      "upload_url": "https://github.com/spamfan/navigator/upload/main",
+      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/update.yaml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+        },
+        {
+          "path": "Navigator LDD2.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+        },
+        {
+          "path": "repos.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
         }
       ]
     },
@@ -151,51 +196,6 @@
         {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/patcher/main/index.html"
-        }
-      ]
-    },
-    {
-      "name": "spamfan.github.io",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/spamfan.github.io",
-      "upload_url": "https://github.com/spamfan/spamfan.github.io/upload/main",
-      "zip_url": "https://github.com/spamfan/spamfan.github.io/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "404.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/404.html"
-        },
-        {
-          "path": "android-chrome-192x192.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-192x192.png"
-        },
-        {
-          "path": "android-chrome-512x512.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/android-chrome-512x512.png"
-        },
-        {
-          "path": "apple-touch-icon.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/apple-touch-icon.png"
-        },
-        {
-          "path": "favicon-16x16.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-16x16.png"
-        },
-        {
-          "path": "favicon-32x32.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon-32x32.png"
-        },
-        {
-          "path": "favicon.ico",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/favicon.ico"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/index.html"
-        },
-        {
-          "path": "site.webmanifest",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/spamfan.github.io/main/site.webmanifest"
         }
       ]
     },
