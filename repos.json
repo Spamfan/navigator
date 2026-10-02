@@ -1,7 +1,56 @@
 {
   "user": "spamfan",
-  "synced_at": 1790890978273,
+  "synced_at": 1790906738260,
   "repos": [
+    {
+      "name": "workflowoptimizer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/workflowoptimizer",
+      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
+      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "app.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/app.js"
+        },
+        {
+          "path": "auth.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth.js"
+        },
+        {
+          "path": "crimson-ldd-v9.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v9.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
+        },
+        {
+          "path": "print.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/print.js"
+        },
+        {
+          "path": "spec-auth.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-auth.md"
+        },
+        {
+          "path": "spec-data.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-data.md"
+        },
+        {
+          "path": "spec-print.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-print.md"
+        },
+        {
+          "path": "stats.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
+        }
+      ]
+    },
     {
       "name": "navigator",
       "branch": "main",
@@ -28,55 +77,6 @@
         {
           "path": "repos.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
-        }
-      ]
-    },
-    {
-      "name": "workflowoptimizer",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/workflowoptimizer",
-      "upload_url": "https://github.com/spamfan/workflowoptimizer/upload/main",
-      "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "auth-spec.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth-spec.md"
-        },
-        {
-          "path": "crimson-ldd-v8.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v8.md"
-        },
-        {
-          "path": "data-spec.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/data-spec.md"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
-        },
-        {
-          "path": "js/app.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/app.js"
-        },
-        {
-          "path": "js/auth.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/auth.js"
-        },
-        {
-          "path": "js/print.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js/print.js"
-        },
-        {
-          "path": "print-spec.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/print-spec.md"
-        },
-        {
-          "path": "stats.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
-        },
-        {
-          "path": "styles.css",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
         }
       ]
     },
