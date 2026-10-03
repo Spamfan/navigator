@@ -1,20 +1,7 @@
 {
   "user": "spamfan",
-  "synced_at": 1791022698586,
+  "synced_at": 1791039969938,
   "repos": [
-    {
-      "name": "roadblock",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/roadblock",
-      "upload_url": "https://github.com/spamfan/roadblock/upload/main",
-      "zip_url": "https://github.com/spamfan/roadblock/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/roadblock/main/index.html"
-        }
-      ]
-    },
     {
       "name": "navigator",
       "branch": "main",
@@ -41,6 +28,19 @@
         {
           "path": "repos.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "roadblock",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/roadblock",
+      "upload_url": "https://github.com/spamfan/roadblock/upload/main",
+      "zip_url": "https://github.com/spamfan/roadblock/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/roadblock/main/index.html"
         }
       ]
     },
