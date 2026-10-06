@@ -1,7 +1,20 @@
 {
   "user": "spamfan",
-  "synced_at": 1791287617420,
+  "synced_at": 1791322321695,
   "repos": [
+    {
+      "name": "framer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/framer",
+      "upload_url": "https://github.com/spamfan/framer/upload/main",
+      "zip_url": "https://github.com/spamfan/framer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/index.html"
+        }
+      ]
+    },
     {
       "name": "workflowoptimizer",
       "branch": "main",
@@ -16,14 +29,6 @@
         {
           "path": "auth.js",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth.js"
-        },
-        {
-          "path": "crimson-ldd-v14.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v14.md"
-        },
-        {
-          "path": "crimson-ldd-v15.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v15.md"
         },
         {
           "path": "crimson-ldd-v16.md",
