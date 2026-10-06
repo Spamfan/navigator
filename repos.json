@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1791241554932,
+  "synced_at": 1791287617420,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -24,6 +24,10 @@
         {
           "path": "crimson-ldd-v15.md",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v15.md"
+        },
+        {
+          "path": "crimson-ldd-v16.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v16.md"
         },
         {
           "path": "docs.js",
@@ -60,6 +64,10 @@
         {
           "path": "spec-docs.md",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-docs.md"
+        },
+        {
+          "path": "spec-generator.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-generator.md"
         },
         {
           "path": "spec-print.md",
