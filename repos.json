@@ -1,20 +1,7 @@
 {
   "user": "spamfan",
-  "synced_at": 1791322321695,
+  "synced_at": 1791339103597,
   "repos": [
-    {
-      "name": "framer",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/framer",
-      "upload_url": "https://github.com/spamfan/framer/upload/main",
-      "zip_url": "https://github.com/spamfan/framer/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/index.html"
-        }
-      ]
-    },
     {
       "name": "workflowoptimizer",
       "branch": "main",
@@ -41,6 +28,10 @@
         {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
+        },
+        {
+          "path": "iphone-transfer.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/iphone-transfer.png"
         },
         {
           "path": "postpaid-IS.png",
@@ -89,6 +80,26 @@
         {
           "path": "ths3-1.png",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/ths3-1.png"
+        },
+        {
+          "path": "tutorial-att.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-att.png"
+        },
+        {
+          "path": "tutorial-tmo.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-tmo.png"
+        },
+        {
+          "path": "tutorial-vzw.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-vzw.png"
+        },
+        {
+          "path": "vzw-trade.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/vzw-trade.png"
+        },
+        {
+          "path": "warp-calls.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/warp-calls.png"
         }
       ]
     },
@@ -118,6 +129,43 @@
         {
           "path": "repos.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "framer",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/framer",
+      "upload_url": "https://github.com/spamfan/framer/upload/main",
+      "zip_url": "https://github.com/spamfan/framer/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "android-chrome-192x192.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/android-chrome-192x192.png"
+        },
+        {
+          "path": "android-chrome-512x512.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/android-chrome-512x512.png"
+        },
+        {
+          "path": "apple-touch-icon.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/apple-touch-icon.png"
+        },
+        {
+          "path": "favicon-16x16.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/favicon-16x16.png"
+        },
+        {
+          "path": "favicon-32x32.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/favicon-32x32.png"
+        },
+        {
+          "path": "favicon.ico",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/favicon.ico"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/framer/main/index.html"
         }
       ]
     },
