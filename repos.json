@@ -1,70 +1,21 @@
 {
   "user": "spamfan",
-  "synced_at": 1791717595306,
+  "synced_at": 1791751895466,
   "repos": [
     {
-      "name": "navigator",
+      "name": "generator",
       "branch": "main",
-      "repo_url": "https://github.com/Spamfan/navigator",
-      "upload_url": "https://github.com/spamfan/navigator/upload/main",
-      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": ".github/workflows/update.yaml",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
-        },
-        {
-          "path": "Navigator LDD2.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
-        },
-        {
-          "path": "Navigator LDD4.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD4.md"
-        },
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
-        },
-        {
-          "path": "repos.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
-        }
-      ]
-    },
-    {
-      "name": "ttr2",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/ttr2",
-      "upload_url": "https://github.com/spamfan/ttr2/upload/main",
-      "zip_url": "https://github.com/spamfan/ttr2/archive/refs/heads/main.zip",
+      "repo_url": "https://github.com/Spamfan/generator",
+      "upload_url": "https://github.com/spamfan/generator/upload/main",
+      "zip_url": "https://github.com/spamfan/generator/archive/refs/heads/main.zip",
       "files": [
         {
           "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/index.html"
+          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/index.html"
         },
         {
-          "path": "src/engine/renderer.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/engine/renderer.js"
-        },
-        {
-          "path": "src/game/tank.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/game/tank.js"
-        },
-        {
-          "path": "src/game/weapons.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/game/weapons.js"
-        },
-        {
-          "path": "src/main.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/main.js"
-        },
-        {
-          "path": "src/ui/hud.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/ui/hud.js"
-        },
-        {
-          "path": "styles.css",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/styles.css"
+          "path": "ths3-1.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/ths3-1.png"
         }
       ]
     },
@@ -84,12 +35,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth.js"
         },
         {
-          "path": "crimson-ldd-v19.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v19.md"
-        },
-        {
-          "path": "crimson-ldd-v20.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v20.md"
+          "path": "crimson-ldd-v23.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v23.md"
         },
         {
           "path": "docs.js",
@@ -178,6 +125,72 @@
         {
           "path": "warp-calls.png",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/warp-calls.png"
+        }
+      ]
+    },
+    {
+      "name": "navigator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/navigator",
+      "upload_url": "https://github.com/spamfan/navigator/upload/main",
+      "zip_url": "https://github.com/spamfan/navigator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": ".github/workflows/update.yaml",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/.github/workflows/update.yaml"
+        },
+        {
+          "path": "Navigator LDD2.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD2.md"
+        },
+        {
+          "path": "Navigator LDD4.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/Navigator LDD4.md"
+        },
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/index.html"
+        },
+        {
+          "path": "repos.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "ttr2",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/ttr2",
+      "upload_url": "https://github.com/spamfan/ttr2/upload/main",
+      "zip_url": "https://github.com/spamfan/ttr2/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/index.html"
+        },
+        {
+          "path": "src/engine/renderer.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/engine/renderer.js"
+        },
+        {
+          "path": "src/game/tank.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/game/tank.js"
+        },
+        {
+          "path": "src/game/weapons.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/game/weapons.js"
+        },
+        {
+          "path": "src/main.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/main.js"
+        },
+        {
+          "path": "src/ui/hud.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/src/ui/hud.js"
+        },
+        {
+          "path": "styles.css",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/ttr2/main/styles.css"
         }
       ]
     },
