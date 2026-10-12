@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1791771144324,
+  "synced_at": 1791809749037,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -18,16 +18,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth.js"
         },
         {
-          "path": "crimson-ldd-v23.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v23.md"
-        },
-        {
-          "path": "crimson-ldd-v24.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v24.md"
-        },
-        {
-          "path": "crimson-ldd-v25.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v25.md"
+          "path": "crimson-ldd-v26.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v26.md"
         },
         {
           "path": "docs.js",
@@ -120,23 +112,6 @@
       ]
     },
     {
-      "name": "generator",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/generator",
-      "upload_url": "https://github.com/spamfan/generator/upload/main",
-      "zip_url": "https://github.com/spamfan/generator/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/index.html"
-        },
-        {
-          "path": "ths3-1.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/ths3-1.png"
-        }
-      ]
-    },
-    {
       "name": "navigator",
       "branch": "main",
       "repo_url": "https://github.com/Spamfan/navigator",
@@ -162,6 +137,23 @@
         {
           "path": "repos.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "generator",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/generator",
+      "upload_url": "https://github.com/spamfan/generator/upload/main",
+      "zip_url": "https://github.com/spamfan/generator/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/index.html"
+        },
+        {
+          "path": "ths3-1.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/generator/main/ths3-1.png"
         }
       ]
     },
