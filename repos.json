@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1791848024275,
+  "synced_at": 1791894810178,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -10,32 +10,92 @@
       "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
       "files": [
         {
-          "path": "app.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/app.js"
+          "path": "doc-blank.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-blank.png"
         },
         {
-          "path": "auth.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/auth.js"
+          "path": "doc-intake-post.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-intake-post.png"
         },
         {
-          "path": "crimson-ldd-v26.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/crimson-ldd-v26.md"
+          "path": "doc-intake.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-intake.png"
         },
         {
-          "path": "docs.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/docs.js"
+          "path": "doc-ip-transfer.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-ip-transfer.png"
         },
         {
-          "path": "generator.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/generator.js"
+          "path": "doc-ths.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-ths.png"
+        },
+        {
+          "path": "doc-vzw-trade.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-vzw-trade.png"
+        },
+        {
+          "path": "doc-warp.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-warp.png"
+        },
+        {
+          "path": "img-tut-att.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/img-tut-att.png"
+        },
+        {
+          "path": "img-tut-tmo.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/img-tut-tmo.png"
+        },
+        {
+          "path": "img-tut-vzw.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/img-tut-vzw.png"
         },
         {
           "path": "index.html",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/index.html"
         },
         {
-          "path": "iphone-transfer.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/iphone-transfer.png"
+          "path": "js-app.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js-app.js"
+        },
+        {
+          "path": "js-auth.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js-auth.js"
+        },
+        {
+          "path": "js-docs.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js-docs.js"
+        },
+        {
+          "path": "js-generator.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js-generator.js"
+        },
+        {
+          "path": "js-print.js",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/js-print.js"
+        },
+        {
+          "path": "md-project.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-project.md"
+        },
+        {
+          "path": "md-spec-auth.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-auth.md"
+        },
+        {
+          "path": "md-spec-data.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-data.md"
+        },
+        {
+          "path": "md-spec-docs.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-docs.md"
+        },
+        {
+          "path": "md-spec-generator.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-generator.md"
+        },
+        {
+          "path": "md-spec-print.md",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-print.md"
         },
         {
           "path": "post-intake-3.png",
@@ -46,20 +106,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/postpaid-IS.png"
         },
         {
-          "path": "prepaid-IS.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/prepaid-IS.png"
-        },
-        {
-          "path": "print.js",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/print.js"
-        },
-        {
           "path": "scrap-paper.png",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/scrap-paper.png"
-        },
-        {
-          "path": "spec-auth.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-auth.md"
         },
         {
           "path": "spec-data.md",
