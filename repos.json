@@ -1,6 +1,6 @@
 {
   "user": "spamfan",
-  "synced_at": 1791894810178,
+  "synced_at": 1791928004094,
   "repos": [
     {
       "name": "workflowoptimizer",
@@ -10,6 +10,10 @@
       "zip_url": "https://github.com/spamfan/workflowoptimizer/archive/refs/heads/main.zip",
       "files": [
         {
+          "path": "data-stats.json",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/data-stats.json"
+        },
+        {
           "path": "doc-blank.png",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-blank.png"
         },
@@ -18,8 +22,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-intake-post.png"
         },
         {
-          "path": "doc-intake.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-intake.png"
+          "path": "doc-intake-pre.png",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/doc-intake-pre.png"
         },
         {
           "path": "doc-ip-transfer.png",
@@ -98,64 +102,8 @@
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/md-spec-print.md"
         },
         {
-          "path": "post-intake-3.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/post-intake-3.png"
-        },
-        {
-          "path": "postpaid-IS.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/postpaid-IS.png"
-        },
-        {
-          "path": "scrap-paper.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/scrap-paper.png"
-        },
-        {
-          "path": "spec-data.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-data.md"
-        },
-        {
-          "path": "spec-docs.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-docs.md"
-        },
-        {
-          "path": "spec-generator.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-generator.md"
-        },
-        {
-          "path": "spec-print.md",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/spec-print.md"
-        },
-        {
-          "path": "stats.json",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/stats.json"
-        },
-        {
           "path": "styles.css",
           "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/styles.css"
-        },
-        {
-          "path": "ths3-1.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/ths3-1.png"
-        },
-        {
-          "path": "tutorial-att.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-att.png"
-        },
-        {
-          "path": "tutorial-tmo.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-tmo.png"
-        },
-        {
-          "path": "tutorial-vzw.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/tutorial-vzw.png"
-        },
-        {
-          "path": "vzw-trade.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/vzw-trade.png"
-        },
-        {
-          "path": "warp-calls.png",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/workflowoptimizer/main/warp-calls.png"
         }
       ]
     },
