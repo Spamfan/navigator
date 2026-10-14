@@ -1,6 +1,6 @@
 # NAVIGATOR
 ### Hub & Suite Orchestrator
-### Living Design Document (LDD) V5
+### Living Design Document (LDD) V6
 
 ---
 
@@ -175,6 +175,7 @@
 
 * **Display & Target Environment:** GitHub Pages static root hosting (`index.html`). Zero external CDN dependencies.
 * **Storage Schema Contract:** Local storage keys strictly adhere to legacy `wp_*` namespace:
+  * `wp_active_user`: Currently selected/watched GitHub username.
   * `wp_data_{user}`: Cached repository metadata and tree arrays.
   * `wp_prefs_{user}`: User preferences (favorites, hidden items, sort orders).
   * `wp_visits_{user}`: Timestamped repository visit history.
@@ -193,16 +194,16 @@
 ### 6. BASELINE FLOOR & FILE TREE
 
 #### Version Floor
-* **App (NAVIGATOR):** `v0.3.2`  
-* **`index.html`:** `v0.3.2`  
-* **`md-spec-navigator.md`:** `v5.0.0`  
-* **`repos.json`:** `synced_at` snapshot  
+* **App (NAVIGATOR):** `v0.3.3`  
+* **`index.html`:** `v0.3.3`  
+* **`md-spec-navigator.md`:** `v6.0.0`  
+* **`repos.json`:** `synced_at` snapshot (decoupled legacy fallback)  
 
 #### File Tree
-* `.github/workflows/update.yaml`
+* `.github/workflows/update.yaml` (legacy crawler workflow)
 * `index.html`
 * `md-spec-navigator.md`
-* `repos.json`
+* `repos.json` (decoupled legacy snapshot)
 
 ---
 
@@ -220,17 +221,12 @@ Navigator operates as the central cockpit and discovery hub across all repositor
   * Head Zipball: `https://github.com/{user}/{repo}/archive/refs/heads/{branch}.zip`
   * Raw File Blobs: `https://raw.githubusercontent.com/{user}/{repo}/{branch}/{path}`
 
-#### Automated Sync & Fallback Pipeline
-    [GitHub Actions (Daily 04:00 UTC)]
-           │
-           ▼
-    [Commit fresh repos.json to main]
-           │
-           ▼
+#### Universal User Pipeline & Navigation
     [User visits Navigator (index.html)]
-           ├── (1) Cache present? ───────► Render wp_data_{user} (0 network hits)
-           ├── (2) Cache missing / old? ─► Fetch repos.json (0 API quota used)
-           └── (3) Sync requested? ──────► Query api.github.com/users/{user}/repos
+           │
+           ├── (1) User unset? ──────────► Display onboarding card & prompt user input
+           ├── (2) User set & cached? ───► Render wp_data_{user} (0 network hits)
+           └── (3) User sync / reload? ──► Query api.github.com/users/{user}/repos directly
 
 #### Context Guard
 * **Pre-Flight File Lockout:** If target files are missing or requested, reply ONLY with the required intake file list and halt.  
