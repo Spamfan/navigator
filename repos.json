@@ -1,20 +1,7 @@
 {
   "user": "spamfan",
-  "synced_at": 1791942220070,
+  "synced_at": 1791972043595,
   "repos": [
-    {
-      "name": "speller",
-      "branch": "main",
-      "repo_url": "https://github.com/Spamfan/speller",
-      "upload_url": "https://github.com/spamfan/speller/upload/main",
-      "zip_url": "https://github.com/spamfan/speller/archive/refs/heads/main.zip",
-      "files": [
-        {
-          "path": "index.html",
-          "raw_url": "https://raw.githubusercontent.com/spamfan/speller/main/index.html"
-        }
-      ]
-    },
     {
       "name": "navigator",
       "branch": "main",
@@ -41,6 +28,19 @@
         {
           "path": "repos.json",
           "raw_url": "https://raw.githubusercontent.com/spamfan/navigator/main/repos.json"
+        }
+      ]
+    },
+    {
+      "name": "speller",
+      "branch": "main",
+      "repo_url": "https://github.com/Spamfan/speller",
+      "upload_url": "https://github.com/spamfan/speller/upload/main",
+      "zip_url": "https://github.com/spamfan/speller/archive/refs/heads/main.zip",
+      "files": [
+        {
+          "path": "index.html",
+          "raw_url": "https://raw.githubusercontent.com/spamfan/speller/main/index.html"
         }
       ]
     },
